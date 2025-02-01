@@ -1,0 +1,14 @@
+services:
+  octoprox:
+    build: ./
+    container_name: octoprox
+    networks:
+      - octoprox
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    user: 1000:1000
+
+networks:
+  octoprox:
+    name: octoprox

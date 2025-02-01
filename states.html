@@ -1,0 +1,12 @@
+<div>
+  <table class="striped">
+    <tbody>
+      {{range .States}}
+      <tr>
+        <th scope="row">{{.Attributes.FriendlyName}}</th>
+        <td>{{.State}} {{.Attributes.UnitOfMeasurement}}</td>
+      </tr>
+      {{end}}
+    </tbody>
+  </table>
+</div>
