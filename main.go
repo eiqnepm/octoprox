@@ -109,6 +109,7 @@ func main() {
 		log.Fatal(err)
 	}
 
+	timeout := os.Getenv("TIMEOUT")
 	http.HandleFunc("/states", func(w http.ResponseWriter, req *http.Request) {
 		s := getStates()
 		sort.Slice(s, func(a, b int) bool {
@@ -116,8 +117,9 @@ func main() {
 		})
 
 		states.Execute(w, struct {
-			States []state
-		}{s})
+			States  []state
+			Timeout string
+		}{s, timeout})
 	})
 
 	http.ListenAndServe(":3000", nil)

@@ -20,13 +20,20 @@
     <main
       class="container"
       hx-get="states"
-      hx-trigger="every 1m, load"
+      hx-swap="outerHTML"
+      hx-trigger="load"
       style="
         align-content: center;
         display: grid;
         height: 100%;
         justify-content: center;
       "
-    ></main>
+    >
+      <img
+        alt=""
+        class="htmx-indicator"
+        src="https://raw.githubusercontent.com/egonelbre/gophers/refs/heads/master/.thumb/animation/gopher-dance-long.gif"
+      />
+    </main>
   </body>
 </html>
